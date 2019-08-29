@@ -16,7 +16,7 @@ The following toolbox is required to perform this program :
 
 ## Extra-function requirement
 
-This program use uipickfile function : an extra function devlopped by Douglas Schwarz and avalaible on this (link)[https://fr.mathworks.com/matlabcentral/fileexchange/10867-uipickfiles-uigetfile-on-steroids].
+This program use uipickfile function : an extra function devlopped by Douglas Schwarz and avalaible on this [link](https://fr.mathworks.com/matlabcentral/fileexchange/10867-uipickfiles-uigetfile-on-steroids).
 To be able to work correctively on the 3 main OS system, this extra function is used to replace the bug on uigetdir matlab function (the title on the window to choose images don't appear on Linux and Mac system).
 
 ## OS platform
