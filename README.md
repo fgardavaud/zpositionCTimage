@@ -12,7 +12,9 @@ This program have been designed to analyze GE CT images created with smartstep/s
 
 ## Images path
 The CT smartstep/smartview images have to be placed in one same image folder.
-To extract correctly CT images from CT scanner, Dicom Viewving solution such as [Horos](https://horosproject.org) is highly recommended. 
+**CT images have to be named as teh following structure : XX-00i-00j.dcm as for instance IM-001-001.dcm for the first image**.
+If not, you will have to edit the a little this program from line 71 to 110.
+To extract correctly CT images from CT scanner, Dicom Viewing solution such as [Horos](https://horosproject.org) is highly recommended. 
 
 ## Matlab system requirement
 This code has been tested in Matlab v9.3  and 9.4 (2017b and 2018a annual version respectively). 
