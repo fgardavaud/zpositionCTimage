@@ -7,6 +7,11 @@
 % date of version: 29/08/2019
 
 %% console and workspace cleaning
+% /!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\
+% You can delete those line if you wante to skip dicominfo generation in
+% thecase you have already open your dicom files in a previous running
+% without any modification
+% /!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\
 clc;
 clear all;
 close all hidden;
@@ -22,12 +27,6 @@ warning('off','all');
 % The CT smartstep/smartview images have to be placed in one and unique image folder.
 % No sub-folder will be take into account.
 % /!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\
-
-
-% %  path recovery
-% currentDirectory = pwd;
-% %  Retrieving the image directory
-% ImageDirectory = [currentDirectory filesep 'images' filesep];
 
 
 % test to know if reading images and retrieving DICOM information
@@ -86,15 +85,6 @@ for i = 1 : length(series_number)
     end
 end
 
-% ImageList_serie_1=ImageList(1:groupNb(1);
-% ImageList_serie_2=ImageList(groupNb(1):(groupNb(2);
-% ImageList_serie_3=ImageList(109:135);
-
-% compteur pour connaitre le nombre d'images par série
-% cnt_image_serie_1=size(ImageList_serie_1,1);
-% cnt_image_serie_2=cnt_image_serie_1+size(ImageList_serie_2,1);
-% cnt_image_serie_3=cnt_image_serie_2+size(ImageList_serie_3,1);
-
 % counter to know the number of images per series
 structureline =1;
 for j=1:length(series_number)
@@ -109,9 +99,6 @@ for j=1:length(series_number)
         % Retrieving the InstanceNumber and SliceLocation for each
         % image
         info_dicom=dicominfo(strcat(char(ImageStackDirectory), filesep, char(partial_ImageList(i))));
-        %         series_num = getfield(info_dicom,'SeriesNumber');
-        %         image_num = getfield(info_dicom,'InstanceNumber');
-        %         slice_loc = getfield(info_dicom,'SliceLocation');
         
         examDetails(structureline).series_num = info_dicom.SeriesNumber;
         examDetails(structureline).slice_number = info_dicom.InstanceNumber;
@@ -119,39 +106,7 @@ for j=1:length(series_number)
         structureline =structureline+1;
     end
     
-    
-    
-    
-    
-    
-    
-    
-    %     % lecture des images de la série 2
-    %     for i=1:size(ImageList_serie_2,1)
-    %
-    %         % Récupération de l'InstanceNumber et de la SliceLocation pour chaque
-    %         % images
-    %         info_dicom=dicominfo(strcat(char(ImageStackDirectory), filesep, char(ImageList(i+cnt_image_serie_1))));
-    %         image_num = getfield(info_dicom,'InstanceNumber');
-    %         slice_loc = getfield(info_dicom,'SliceLocation');
-    %         slice_position_serie_2(image_num,:) = [image_num+cnt_image_serie_1 slice_loc];
-    %
-    %     end
-    %
-    %     % lecture des images de la série 3
-    %     for i=1:size(ImageList_serie_3,1)
-    %
-    %         % Récupération de l'InstanceNumber et de la SliceLocation pour chaque
-    %         % images
-    %         info_dicom=dicominfo(strcat(char(ImageStackDirectory), filesep, char(ImageList(i+cnt_image_serie_2))));
-    %         image_num = getfield(info_dicom,'InstanceNumber');
-    %         slice_loc = getfield(info_dicom,'SliceLocation');
-    %         slice_position_serie_3(image_num,:) = [image_num+cnt_image_serie_2 slice_loc];
-    %
-    %     end
 end
-% construction de la matrice de positionnement de l'ensemble des images smartstep
-% slice_position_total = [slice_position_serie_1; slice_position_serie_2; slice_position_serie_3];
 
 
 %% transition from image possiblities to acquisition positions
