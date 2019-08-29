@@ -25,7 +25,8 @@ warning('off','all');
 
 % /!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\
 % The CT smartstep/smartview images have to be placed in one and unique image folder.
-% No sub-folder will be take into account.
+% No sub-folder will be take into account
+% the first image name have to finished by 1 and not 0.
 % /!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\
 
 
