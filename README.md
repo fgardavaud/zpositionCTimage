@@ -39,7 +39,7 @@ The code have been exhaustively commented, as you can understand the function of
 
 ## CT images sample
 
-A CT images sample folder have been included in this repo. You can use this to test the program. To do so, you have to decompress the 7-zip archive with aditionnal software such as [7-zip](https://www.7-zip.org) on Windows or [keka](https://www.keka.io/en/) on macOS.
+A CT images sample folder have been included in this repo. You can use this to test the program. To do so, you have to decompress the 7-zip archive with aditionnal software such as [7-zip](https://www.7-zip.org) on Windows or [Keka](https://www.keka.io/en/) on macOS.
 
 -----
 
